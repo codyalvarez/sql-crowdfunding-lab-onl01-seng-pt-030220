@@ -34,8 +34,11 @@ def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_th
   "SELECT users.name, (SUM(pledges.amount)
    FROM users
    INNER JOIN pledges
-   ON users."
+   ON users.id = pledges.project_id
+   GROUP BY users.name"
 end
+
+users have an id and the pledges have and id and project id
 
 def selects_the_category_names_and_pledge_amounts_of_all_pledges_in_the_music_category
   "Write your SQL query Here"
